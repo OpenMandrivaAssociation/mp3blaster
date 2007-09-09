@@ -1,14 +1,14 @@
 Summary: 	Console based MP3 player
 Name: 		mp3blaster
 Version: 	3.2.3
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 License: 	GPL
 Group: 		Sound
 URL:		http://mp3blaster.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/mp3blaster/%{name}-%{version}.tar.bz2
-Requires:	MySQL-client
-Requires:	MySQL-shared
-BuildRequires:	MySQL-devel
+Requires:	mysql-client
+Requires:	mysql-shared
+BuildRequires:	mysql-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	lirc-devel
 BuildRequires:	ncurses-devel
@@ -60,4 +60,3 @@ rm -f %{buildroot}%{_datadir}/mp3blaster/charmap/maketbl.c
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man1/*
-
