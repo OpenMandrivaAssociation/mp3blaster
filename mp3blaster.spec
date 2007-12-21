@@ -14,6 +14,7 @@ BuildRequires:	lirc-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	oggvorbis-devel
 BuildRequires:	sidplay-devel
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 MP3Blaster is a text console based program for playing mainly mp3
