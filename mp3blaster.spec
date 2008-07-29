@@ -1,7 +1,7 @@
 Summary: 	Console based MP3 player
 Name: 		mp3blaster
 Version: 	3.2.3
-Release: 	%mkrel 4
+Release: 	%mkrel 6
 License: 	GPL
 Group: 		Sound
 URL:		http://mp3blaster.sourceforge.net/
