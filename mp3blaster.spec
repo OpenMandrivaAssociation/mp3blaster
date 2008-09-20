@@ -1,11 +1,12 @@
 Summary: 	Console based MP3 player
 Name: 		mp3blaster
 Version: 	3.2.3
-Release: 	%mkrel 6
+Release: 	%mkrel 7
 License: 	GPL
 Group: 		Sound
 URL:		http://mp3blaster.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/mp3blaster/%{name}-%{version}.tar.bz2
+Patch0:		mp3blaster-3.2.3-gcc43.patch
 Requires:	mysql-client
 Requires:	mysql-shared
 BuildRequires:	mysql-devel
@@ -14,7 +15,7 @@ BuildRequires:	lirc-devel
 BuildRequires:	ncurses-devel
 BuildRequires:	oggvorbis-devel
 BuildRequires:	sidplay-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 MP3Blaster is a text console based program for playing mainly mp3
@@ -26,6 +27,7 @@ orders.
 %prep
 
 %setup -q
+%patch0 -p1
 
 %build
 export CFLAGS="%{optflags}"
@@ -43,7 +45,7 @@ export LDFLAGS=" -I%{_includedir} -I%{_includedir}/mysql -lmysqlclient"
 %make
 
 %install
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %makeinstall
 
@@ -52,7 +54,7 @@ rm -f %{buildroot}%{_datadir}/mp3blaster/charmap/chargen.c
 rm -f %{buildroot}%{_datadir}/mp3blaster/charmap/maketbl.c
 
 %clean
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
