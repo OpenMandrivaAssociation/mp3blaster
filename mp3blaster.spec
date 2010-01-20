@@ -1,12 +1,18 @@
 Summary: 	Console based MP3 player
 Name: 		mp3blaster
-Version: 	3.2.3
-Release: 	%mkrel 10
-License: 	GPL
+Version: 	3.2.5
+Release: 	%mkrel 1
+License: 	GPLv2+
 Group: 		Sound
 URL:		http://mp3blaster.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/mp3blaster/%{name}-%{version}.tar.bz2
-Patch0:		mp3blaster-3.2.3-gcc43.patch
+Source0:	http://prdownloads.sourceforge.net/mp3blaster/%{name}-%{version}.tar.gz
+Patch0:		mp3blaster-3.2.5-deb-02_bool.patch
+Patch1:		mp3blaster-3.2.5-deb-03_endian.patch
+Patch2:		mp3blaster-3.2.5-deb-04_memleak.patch
+Patch3:		mp3blaster-3.2.5-deb-05_macro.patch
+Patch4:		mp3blaster-3.2.5-deb-06_man.patch
+Patch5:		mp3blaster-3.2.5-deb-07_fix_ogg.patch
+Patch6:		mp3blaster-3.2.5-deb-08_fix_ftbfs_const_char.patch
 Requires:	mysql-client
 Requires:	mysql-shared
 BuildRequires:	mysql-devel
@@ -28,6 +34,12 @@ orders.
 
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
 
 %build
 export CFLAGS="%{optflags}"
