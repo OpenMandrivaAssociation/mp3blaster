@@ -4,7 +4,7 @@ Version: 	3.2.5
 Release: 	8
 License: 	GPLv2+
 Group: 		Sound
-URL:		http://mp3blaster.sourceforge.net/
+URL:		https://mp3blaster.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/mp3blaster/%{name}-%{version}.tar.gz
 Patch0:		mp3blaster-3.2.5-deb-02_bool.patch
 Patch1:		mp3blaster-3.2.5-deb-03_endian.patch
