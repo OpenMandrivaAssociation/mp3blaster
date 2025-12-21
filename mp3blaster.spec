@@ -15,6 +15,11 @@ Patch5:		mp3blaster-3.2.5-deb-07_fix_ogg.patch
 Patch6:		mp3blaster-3.2.5-deb-08_fix_ftbfs_const_char.patch
 Requires:	mysql-client
 Requires:	mysql-shared
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	mysql-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	lirc-devel
